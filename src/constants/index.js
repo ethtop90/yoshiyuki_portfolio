@@ -11,7 +11,7 @@ export const attributesGroup3 =
 
 export const myInfo = {
 	name: "Yoshiyuki Kamae",
-	title: "Fullstack Web3 Developer",
+	title: "Fullstack Blockchain Developer",
 	email: "kamae.yoshiyuki@gmail.com",
 	tel: "",
 	location: "Tokyo, Japan",
