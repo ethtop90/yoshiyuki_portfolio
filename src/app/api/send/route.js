@@ -2,7 +2,12 @@ import ContactFormEmail from "@/email/ContactFormEmail";
 import ContactFormEmailResponse from "@/email/ContactFormEmailResponse";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.NEXT_PRIVATE_RESEND_API);
+const resendApiKey = process.env.NEXT_PRIVATE_RESEND_API;
+
+if (!resendApiKey) {
+    throw new Error("Missing API key. Pass it to the constructor `new Resend(\"re_123\")`");
+}
+const resend = new Resend(resendApiKey);
 
 export async function POST(req) {
 	const { name, email, message } = await req.json();
